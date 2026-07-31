@@ -3,8 +3,8 @@ spring:
     name: notification-service
   datasource:
     url: jdbc:postgresql://localhost:5432/fixora_notifications_db
-    username: xxxxxx
-    password: xxxxxx
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
