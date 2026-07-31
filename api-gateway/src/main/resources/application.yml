@@ -1,0 +1,63 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: auth-service
+              uri: http://localhost:8082
+              predicates:
+                - Path=/api/v1/auth/**
+            - id: user-service
+              uri: http://localhost:8082
+              predicates:
+                - Path=/api/v1/user/**
+            - id: product-service
+              uri: http://localhost:8083
+              predicates:
+                - Path=/api/v1/products/**
+            - id: product-service-public-api
+              uri: http://localhost:8083
+              predicates:
+                - Path=/api/v1/public/products/**
+            - id: order-service-api
+              uri: http://localhost:8085
+              predicates:
+                - Path=/api/v1/orders/**
+            - id: notification-service-api
+              uri: http://localhost:8086
+              predicates:
+                - Path=/api/v1/notifications/**
+            - id: payment-service-api
+              uri: http://localhost:8084
+              predicates:
+                - Path=/api/v1/payments/**
+            - id: cart-service-api
+              uri: http://localhost:8087
+              predicates:
+                - Path=/api/v1/cart/**
+            - id: ai-service-api
+              uri: http://localhost:8089
+              predicates:
+                - Path=/api/v1/ai/**
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration-ms: ${JWT_TOKEN_EXPIRE_TIME}0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: gateway
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.boot.context.properties: TRACE

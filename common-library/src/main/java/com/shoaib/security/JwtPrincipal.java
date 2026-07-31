@@ -1,0 +1,9 @@
+package com.shoaib.security;
+
+import java.util.UUID;
+
+public record JwtPrincipal(
+        UUID userId,
+        String role
+) {
+}

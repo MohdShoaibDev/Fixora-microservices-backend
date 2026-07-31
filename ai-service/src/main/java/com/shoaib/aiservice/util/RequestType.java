@@ -1,0 +1,3 @@
+package com.shoaib.aiservice.util;
+
+public enum RequestType { SERVICE_REQUEST, GENERAL_QUESTION, CLARIFICATION_REQUIRED, UNSUPPORTED_SERVICE, EMERGENCY }

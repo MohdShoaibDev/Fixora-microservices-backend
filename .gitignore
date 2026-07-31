@@ -1,0 +1,54 @@
+############################
+# IntelliJ IDEA
+############################
+.idea/
+*.iml
+out/
+
+############################
+# Maven
+############################
+target/
+
+############################
+# Gradle (if used)
+############################
+.gradle/
+build/
+
+############################
+# Logs
+############################
+*.log
+logs/
+
+############################
+# OS Files
+############################
+.DS_Store
+Thumbs.db
+
+############################
+# Environment Files
+############################
+.env
+.env.*
+effective.xml
+############################
+# Spring Boot Config (only if they contain secrets)
+############################
+application-local.yml
+application-local.properties
+application-prod.yml
+application-prod.properties
+
+############################
+# VS Code (if used)
+############################
+.vscode/
+
+############################
+# Temporary Files
+############################
+*.tmp
+*.swp
